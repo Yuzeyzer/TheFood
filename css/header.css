@@ -1,0 +1,26 @@
+.header {
+  padding-top: 48px;
+}
+
+.header__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__block--right {
+  display: flex;
+}
+
+.nav__menu {
+  display: flex;
+}
+
+.nav__item {
+  margin-right: 46px;
+}
+
+.nav__item:last-child {
+  margin: 0;
+}
+/*# sourceMappingURL=header.css.map */

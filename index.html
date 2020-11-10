@@ -21,14 +21,14 @@
               <ul class="nav__menu">
                 <li class="nav__item"><a href="" class="nav__link">Home</a></li>
                 <li class="nav__item"><a href="" class="nav__link">About</a></li>
-                <li class="nav__item"><a href="" class="nav__link">Services</a></li>
+                <li class="nav__item"><a href="" class="nav__link nav__dropdown">Services</a></li>
                 <li class="nav__item"><a href="" class="nav__link">Categories</a></li>
-                <li class="nav__item"><a href="" class="nav__link">Pages</a></li>
+                <li class="nav__item"><a href="" class="nav__link nav__dropdown">Pages</a></li>
                 <li class="nav__item"><a href="" class="nav__link">Blog</a></li>
                 <li class="nav__item"><a href="" class="nav__link">Contact</a></li>
               </ul>
             </nav>
-            <div class="flex">
+            <div class="flex system-elements">
               <div class="search">
                 <img src="./images/search.svg" alt="search" />
               </div>
@@ -41,5 +41,52 @@
         </div>
       </div>
     </header>
+
+    <div class="overlay">
+      <div class="over-1"></div>
+      <div class="over-2"></div>
+      <div class="over-3"></div>
+    </div>
+    <main>
+      <section class="hero">
+        <div class="container relative">
+          <div class="for-animation" id="scene">
+            <img data-depth="-.1" class="hero__mint" src="./images/mint.png" alt="" />
+            <img data-depth=".3" class="hero__mint--small" src="./images/small-mint.png" alt="" />
+            <img data-depth="-1" class="hero__pepper" src="./images/pepper.png" alt="" />
+          </div>
+          <div class="hero__row">
+            <div class="col-5">
+              <div class="hero__item">
+                <h1 class="hero__title">
+                  Free Home <span class="orange">Delivery Within</span> an Hour
+                </h1>
+                <p class="hero__description">
+                  There are many variations of passages of Lorem Ipsum available, but the majority
+                  have suffered alteration in some form, by injected humour, or randomised words
+                  which don't look even slightly believable.
+                </p>
+                <form class="hero__form">
+                  <button class="btn btn-orange hero__btn">Order Now</button>
+                  <label for="search" class="hero__label">
+                    <input id="search" type="text" placeholder="Enter food name" />
+                  </label>
+                  <button class="btn btn-orange hero__search">Search</button>
+                </form>
+              </div>
+            </div>
+            <div class="col-7">
+              <div class="hero__item text-right">
+                <img class="hero__courier" src="./images/hero.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

@@ -1,0 +1,62 @@
+.hero {
+	.container {
+		min-height: 900px;
+	}
+	&__row {
+		position: relative;
+		z-index: 1;
+		display: flex !important;
+		padding-top: 120px;
+	}
+	&__title {
+		font-family: "Fresh Cream";
+		font-size: 64px;
+		line-height: 110px;
+	}
+	&__description {
+		margin: 50px 0 115px;
+		font-size: 18px;
+		color: $color-darkGray;
+	}
+	&__label {
+		margin-left: 18px;
+		input {
+			font-weight: 600;
+			font-size: 16px;
+			padding: 14px 50px 14px 25px;
+			border: none;
+			outline: none;
+			border-radius: 8px;
+			background-color: $color-gray;
+			color: $color-darkGray;
+		}
+	}
+	&__search {
+		margin-left: -50px;
+	}
+	&__courier {
+		margin-top: -75px;
+		max-width: 675px;
+	}
+	&__mint {
+		position: absolute !important;
+		left: auto !important;
+		top: auto !important;
+		bottom: -50vh !important;
+		right: 50% !important;
+		z-index: -1 !important;
+		&--small {
+			position: absolute !important;
+			left: 50% !important;
+			top: 25% !important;
+			z-index: -1 !important;
+		}
+	}
+	&__pepper {
+		position: absolute !important;
+		left: -10% !important;
+		top: 0% !important;
+		z-index: -3 !important;
+		transform: translateX(-50%);
+	}
+}

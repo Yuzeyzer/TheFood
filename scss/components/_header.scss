@@ -39,9 +39,34 @@
 		}
 	}
 	&__link {
+		position: relative;
 		font-weight: 400;
 		font-size: 16px;
 		color: $color-black;
+		transition: 0.3s;
+		&:hover {
+			color: $color-orange;
+		}
+	}
+	&__dropdown {
+		&::before {
+			content: "";
+			position: absolute;
+			right: -20px;
+			top: 5px;
+			width: 8px;
+			height: 8px;
+			background-color: transparent;
+			border-left: 2px solid $color-black;
+			border-bottom: 2px solid $color-black;
+			transform: rotate(-45deg);
+			transition: 0.3s;
+		}
+		&:hover {
+			&::before {
+				border-color: $color-orange;
+			}
+		}
 	}
 }
 

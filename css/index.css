@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+span {
+  display: inline-block;
+}
+
+.container {
+  max-width: 1640px;
+  margin: 0 auto;
+}
+
+.orange {
+  color: #ffbe00;
+}
+
+.btn {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 14px 32px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-orange {
+  background-color: #ffbe00;
+  color: #222222;
+  transition: 0.3s;
+}
+
+.btn-orange:hover {
+  background-color: #222222;
+  color: #ffbe00;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.relative {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+}
+
+.over-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 33.33%;
+  height: 100%;
+  background-color: black;
+}
+
+.over-2 {
+  position: absolute;
+  top: 0;
+  left: 33.33%;
+  width: 33.33%;
+  height: 100%;
+  background-color: black;
+}
+
+.over-3 {
+  position: absolute;
+  top: 0;
+  left: 66.66%;
+  width: 33.33%;
+  height: 100%;
+  background-color: black;
+}
+
+/* @font-face kit by Fonts2u (https://fonts2u.com) */
+@font-face {
+  font-family: 'Fresh Cream';
+  src: url("../fonts/Fresh_Cream.eot?") format("eot"), url("../fonts/Fresh_Cream.woff") format("woff"), url("../fonts/Fresh_Cream.ttf") format("truetype"), url("../fonts/Fresh_Cream.svg#FreshCream") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.col-5 {
+  width: 41.65%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33%;
+}
+
+.header {
+  padding-top: 48px;
+}
+
+.header__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__block--right {
+  display: flex;
+}
+
+.header__nav {
+  margin-right: 140px;
+}
+
+.logo__link {
+  display: flex;
+  align-items: center;
+}
+
+.logo__name {
+  padding-top: 15px;
+  margin-left: 20px;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 38px;
+  color: #ffbe00;
+}
+
+.nav__menu {
+  display: flex;
+}
+
+.nav__item {
+  margin-right: 46px;
+}
+
+.nav__item:last-child {
+  margin: 0;
+}
+
+.nav__link {
+  position: relative;
+  font-weight: 400;
+  font-size: 16px;
+  color: #222222;
+  transition: 0.3s;
+}
+
+.nav__link:hover {
+  color: #ffbe00;
+}
+
+.nav__dropdown::before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 5px;
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+  border-left: 2px solid #222222;
+  border-bottom: 2px solid #222222;
+  transform: rotate(-45deg);
+  transition: 0.3s;
+}
+
+.nav__dropdown:hover::before {
+  border-color: #ffbe00;
+}
+
+.cart {
+  margin-left: 30px;
+  position: relative;
+}
+
+.cart__counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  color: #fff;
+  background-color: #ff0303;
+  font-size: 7px;
+  border-radius: 50%;
+  transform: translateX(50%);
+}
+
+.hero .container {
+  min-height: 900px;
+}
+
+.hero__row {
+  position: relative;
+  z-index: 1;
+  display: flex !important;
+  padding-top: 120px;
+}
+
+.hero__title {
+  font-family: "Fresh Cream";
+  font-size: 64px;
+  line-height: 110px;
+}
+
+.hero__description {
+  margin: 50px 0 115px;
+  font-size: 18px;
+  color: #9e9e9e;
+}
+
+.hero__label {
+  margin-left: 18px;
+}
+
+.hero__label input {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 14px 50px 14px 25px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background-color: #efefef;
+  color: #9e9e9e;
+}
+
+.hero__search {
+  margin-left: -50px;
+}
+
+.hero__courier {
+  margin-top: -75px;
+  max-width: 675px;
+}
+
+.hero__mint {
+  position: absolute !important;
+  left: auto !important;
+  top: auto !important;
+  bottom: -50vh !important;
+  right: 50% !important;
+  z-index: -1 !important;
+}
+
+.hero__mint--small {
+  position: absolute !important;
+  left: 50% !important;
+  top: 25% !important;
+  z-index: -1 !important;
+}
+
+.hero__pepper {
+  position: absolute !important;
+  left: -10% !important;
+  top: 0% !important;
+  z-index: -3 !important;
+  transform: translateX(-50%);
+}
+/*# sourceMappingURL=index.css.map */

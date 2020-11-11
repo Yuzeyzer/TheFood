@@ -9,8 +9,7 @@
 		padding-top: 120px;
 	}
 	&__title {
-		font-family: "Fresh Cream";
-		font-size: 64px;
+		@include font($font-cream, 64px, 700);
 		line-height: 110px;
 	}
 	&__description {

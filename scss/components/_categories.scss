@@ -1,6 +1,84 @@
 .categories {
+	position: relative;
 	height: 100vh;
+	&::before {
+		content: "";
+		@include position(absolute, 400px, 0);
+		width: 100%;
+		min-height: 830px;
+		background-color: $color-gray;
+		z-index: -1;
+	}
 	&__header {
 		margin-top: 190px;
+		max-width: 825px;
+	}
+	&__title {
+		@include font($font-cream, 36px);
+		color: $color-black;
+	}
+	&__description {
+		@include font($font-poppins, 16px);
+		margin: 50px 0 100px;
+		color: $color-spaceGray;
+	}
+	&__row {
+		margin: 0 -15px;
+	}
+	&__item {
+		padding: 0 15px;
+		position: relative;
+		transition: 0.3s;
+		img {
+			width: 100%;
+			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
+			border-radius: 30px;
+			transition: 0.3s;
+		}
+		&:hover {
+			margin-top: -20px;
+			img {
+				box-shadow: 0 13px 19px 0 rgba(0, 0, 0, 0.3);
+			}
+			.categories {
+				&__link {
+					background-color: $color-black;
+				}
+				&__type {
+					color: $color-white;
+				}
+				&__arrow {
+					background-color: $color-orange;
+					svg {
+						fill: $color-white;
+					}
+				}
+			}
+		}
+	}
+	&__link {
+		@include position(absolute, 256px, 32px);
+		padding: 20px 40px;
+		background-color: $color-orange;
+		min-width: 455px;
+		border-radius: 16px;
+		transition: 0.3s;
+	}
+	&__type {
+		@include font($font-poppins, 24px, 600);
+		color: $color-black;
+		transition: 0.3s;
+	}
+	&__arrow {
+		@include position(absolute, 0, 7px);
+		display: inline-flex;
+		background-color: $color-white;
+		padding: 25px 35px;
+		border-radius: 16px;
+		transition: 0.3s;
+		svg {
+			fill: $color-black;
+			transition: 0.3s;
+		}
 	}
 }

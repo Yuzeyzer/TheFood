@@ -141,7 +141,7 @@ TweenMax.to('.over-3', 1, {
   ease: Expo.easeInOut,
 });
 
-// TweenMax.to('.overlay', 1, {
-//   delay: 1.1,
-//   zIndex: -1,
-// });
+TweenMax.to('.overlay', 1, {
+  delay: 1.1,
+  zIndex: -1,
+});

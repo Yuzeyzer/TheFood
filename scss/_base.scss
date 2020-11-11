@@ -10,6 +10,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 li {
@@ -71,9 +72,9 @@ span {
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 2;
   width: 100vw;
   height: 100vh;
-  animation: munarbek 1s;
 }
 
 .over {
@@ -83,7 +84,7 @@ span {
     left: 0;
     width: 33.33%;
     height: 100%;
-    background-color: red;
+    background-color: black;
   }
   &-2 {
     position: absolute;
@@ -91,7 +92,7 @@ span {
     left: 33.33%;
     width: 33.33%;
     height: 100%;
-    background-color: green;
+    background-color: black;
   }
   &-3 {
     position: absolute;
@@ -99,19 +100,6 @@ span {
     left: 66.66%;
     width: 33.33%;
     height: 100%;
-    background-color: yellow;
+    background-color: black;
   }
-}
-
-@keyframes munarbek {
-  from {
-    z-index: 2;
-  }
-  to {
-    z-index: -1;
-  }
-}
-
-html {
-  user-select: none;
 }

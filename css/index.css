@@ -11,6 +11,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 li {
@@ -73,9 +74,9 @@ span {
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 2;
   width: 100vw;
   height: 100vh;
-  animation: munarbek 1s;
 }
 
 .over-1 {
@@ -84,7 +85,7 @@ span {
   left: 0;
   width: 33.33%;
   height: 100%;
-  background-color: red;
+  background-color: black;
 }
 
 .over-2 {
@@ -93,7 +94,7 @@ span {
   left: 33.33%;
   width: 33.33%;
   height: 100%;
-  background-color: green;
+  background-color: black;
 }
 
 .over-3 {
@@ -102,20 +103,7 @@ span {
   left: 66.66%;
   width: 33.33%;
   height: 100%;
-  background-color: yellow;
-}
-
-@keyframes munarbek {
-  from {
-    z-index: 2;
-  }
-  to {
-    z-index: -1;
-  }
-}
-
-html {
-  user-select: none;
+  background-color: black;
 }
 
 /* @font-face kit by Fonts2u (https://fonts2u.com) */
@@ -251,6 +239,7 @@ html {
 .hero__title {
   font-family: "Fresh Cream";
   font-size: 64px;
+  font-weight: 700;
   line-height: 110px;
 }
 
@@ -309,10 +298,120 @@ html {
 }
 
 .categories {
+  position: relative;
   height: 100vh;
+}
+
+.categories::before {
+  content: "";
+  position: absolute;
+  top: 400px;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  width: 100%;
+  min-height: 830px;
+  background-color: #efefef;
+  z-index: -1;
 }
 
 .categories__header {
   margin-top: 190px;
+  max-width: 825px;
+}
+
+.categories__title {
+  font-family: "Fresh Cream";
+  font-size: 36px;
+  font-weight: 400;
+  color: #222222;
+}
+
+.categories__description {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 50px 0 100px;
+  color: #707070;
+}
+
+.categories__row {
+  margin: 0 -15px;
+}
+
+.categories__item {
+  padding: 0 15px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.categories__item img {
+  width: 100%;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.categories__item:hover {
+  margin-top: -20px;
+}
+
+.categories__item:hover img {
+  box-shadow: 0 13px 19px 0 rgba(0, 0, 0, 0.3);
+}
+
+.categories__item:hover .categories__link {
+  background-color: #222222;
+}
+
+.categories__item:hover .categories__type {
+  color: #fff;
+}
+
+.categories__item:hover .categories__arrow {
+  background-color: #ffbe00;
+}
+
+.categories__item:hover .categories__arrow svg {
+  fill: #fff;
+}
+
+.categories__link {
+  position: absolute;
+  top: 256px;
+  right: 32px;
+  bottom: auto;
+  left: auto;
+  padding: 20px 40px;
+  background-color: #ffbe00;
+  min-width: 455px;
+  border-radius: 16px;
+  transition: 0.3s;
+}
+
+.categories__type {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #222222;
+  transition: 0.3s;
+}
+
+.categories__arrow {
+  position: absolute;
+  top: 0;
+  right: 7px;
+  bottom: auto;
+  left: auto;
+  display: inline-flex;
+  background-color: #fff;
+  padding: 25px 35px;
+  border-radius: 16px;
+  transition: 0.3s;
+}
+
+.categories__arrow svg {
+  fill: #222222;
+  transition: 0.3s;
 }
 /*# sourceMappingURL=index.css.map */

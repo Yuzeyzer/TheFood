@@ -69,9 +69,10 @@ span {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 2;
   width: 100vw;
   height: 100vh;
+  background-color: blue;
+  animation: munarbek 1s;
 }
 
 .over-1 {
@@ -80,7 +81,7 @@ span {
   left: 0;
   width: 33.33%;
   height: 100%;
-  background-color: black;
+  background-color: red;
 }
 
 .over-2 {
@@ -89,7 +90,7 @@ span {
   left: 33.33%;
   width: 33.33%;
   height: 100%;
-  background-color: black;
+  background-color: green;
 }
 
 .over-3 {
@@ -98,7 +99,16 @@ span {
   left: 66.66%;
   width: 33.33%;
   height: 100%;
-  background-color: black;
+  background-color: yellow;
+}
+
+@keyframes munarbek {
+  from {
+    z-index: 2;
+  }
+  to {
+    z-index: -1;
+  }
 }
 
 /* @font-face kit by Fonts2u (https://fonts2u.com) */

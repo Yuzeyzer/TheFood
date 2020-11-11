@@ -10,7 +10,6 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  overflow: hidden;
 }
 
 li {
@@ -33,6 +32,11 @@ span {
 
 .orange {
   color: $color-orange;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -67,10 +71,8 @@ span {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: -1;
   width: 100vw;
   height: 100vh;
-  background-color: blue;
   animation: munarbek 1s;
 }
 
@@ -108,4 +110,8 @@ span {
   to {
     z-index: -1;
   }
+}
+
+html {
+  user-select: none;
 }

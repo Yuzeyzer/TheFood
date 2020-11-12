@@ -4,7 +4,7 @@
 	font-weight: $weight;
 }
 
-@mixin position($pos, $top, $right, $bottom: auto, $left: auto) {
+@mixin position($pos, $top, $right:auto, $bottom: auto, $left: auto) {
 	position: $pos;
 	top: $top;
 	right: $right;

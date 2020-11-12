@@ -12,6 +12,7 @@
 body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
+  background-color: #000;
 }
 
 li {
@@ -387,6 +388,29 @@ span {
   min-width: 455px;
   border-radius: 16px;
   transition: 0.3s;
+  overflow: hidden;
+}
+
+.categories__link.is-active::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #ffbe00;
+  animation: 0.6s beforeOrange 0.6s forwards;
+}
+
+.categories__link.is-backward::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffbe00;
+  animation: 0.6s beforeOrangeBackwards 0.3s forwards;
 }
 
 .categories__type {
@@ -398,20 +422,88 @@ span {
 }
 
 .categories__arrow {
-  position: absolute;
-  top: 0;
-  right: 7px;
-  bottom: auto;
-  left: auto;
   display: inline-flex;
   background-color: #fff;
   padding: 25px 35px;
   border-radius: 16px;
   transition: 0.3s;
+  height: 100%;
 }
 
 .categories__arrow svg {
   fill: #222222;
   transition: 0.3s;
+}
+
+.categories__arrow.is-active {
+  position: absolute;
+  top: 0;
+  right: 7px;
+  bottom: auto;
+  left: auto;
+  transform: rotate(180deg);
+  animation: 1.2s arrow 0.4s forwards;
+}
+
+.categories__arrow.is-backward {
+  position: absolute;
+  top: 0;
+  right: 80%;
+  bottom: auto;
+  left: auto;
+  animation: 0.6s arrowBackward 0.4s forwards;
+}
+
+@keyframes arrow {
+  0% {
+    right: 7px;
+    transform: rotate(180deg);
+  }
+  25% {
+    right: -7px;
+    transform: rotate(180deg);
+  }
+  50% {
+    right: 80.6%;
+    transform: rotate(180deg);
+  }
+  75% {
+    right: 80.6%;
+    transform: rotate(270deg);
+  }
+  100% {
+    right: 80.6%;
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes arrowBackward {
+  0% {
+    right: 80%;
+  }
+  50% {
+    right: -7px;
+  }
+  100% {
+    right: 7px;
+  }
+}
+
+@keyframes beforeOrange {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes beforeOrangeBackwards {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
 }
 /*# sourceMappingURL=index.css.map */

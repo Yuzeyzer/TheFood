@@ -53,36 +53,46 @@
 						fill: $color-white;
 					}
 				}
+				&__text {
+					color: rgba(255, 255, 255, 0.5);
+				}
 			}
 		}
 	}
 	&__link {
-		@include position(absolute, 256px, 32px);
+		@include position(absolute, auto, 50%, 10%);
 		padding: 20px 40px;
 		background-color: $color-orange;
 		min-width: 455px;
 		border-radius: 16px;
 		transition: 0.3s;
 		overflow: hidden;
+		transform: translateX(50%);
+		&.is-active {
+			animation: 0.6s link 1.2s forwards;
+		}
+		&.is-backward {
+			animation: 0.6s linkBackward 0s forwards;
+		}
 		&.is-active::before {
-			content: '';
+			content: "";
 			position: absolute;
 			right: 0;
 			top: 0;
 			width: 0;
 			height: 100%;
 			background-color: $color-orange;
-			animation: 0.6s beforeOrange 0.6s forwards;
+			animation: 2s beforeOrange 0.3s forwards;
 		}
 		&.is-backward::before {
-			content: '';
+			content: "";
 			position: absolute;
 			right: 0;
 			top: 0;
 			width: 100%;
 			height: 100%;
 			background-color: $color-orange;
-			animation: 0.6s beforeOrangeBackwards 0.3s forwards;
+			animation: 2s beforeOrangeBackwards 0s forwards;
 		}
 	}
 	&__type {
@@ -97,6 +107,7 @@
 		border-radius: 16px;
 		transition: 0.3s;
 		height: 100%;
+		max-height: 75px;
 		svg {
 			fill: $color-black;
 			transition: 0.3s;
@@ -108,7 +119,33 @@
 		}
 		&.is-backward {
 			@include position(absolute, 0, 80%);
-			animation: 0.6s arrowBackward 0.4s forwards;
+			transform: rotate(270deg);
+			animation: 1s arrowBackward 0s forwards;
+		}
+	}
+	&__text {
+		font-family: "Poppins", sans-serif;
+		font-size: 18px;
+		font-weight: 400;
+		margin: 20px 0 0px;
+		color: $color-black;
+		transition: 0.3s;
+	}
+	&__look {
+		@include position(absolute, 67%, 50%);
+		@include font($font-poppins, 18px, 700);
+		background-color: $color-white;
+		color: $color-black;
+		padding: 10px 30px;
+		border-radius: 30px;
+		transform: translateX(50%);
+		transition: 0.3s;
+		border: 2px solid transparent;
+		text-transform: uppercase;
+		&:hover {
+			background-color: $color-black;
+			color: $color-white;
+			border: 2px solid $color-white;
 		}
 	}
 }
@@ -133,18 +170,31 @@
 	100% {
 		right: 80.6%;
 		transform: rotate(270deg);
+		background-color: transparent;
 	}
 }
 
 @keyframes arrowBackward {
 	0% {
-		right: 80%;
+		right: 80.6%;
+		transform: rotate(270deg);
+		background-color: transparent;
+	}
+	25% {
+		right: 80.6%;
+		transform: rotate(270deg);
 	}
 	50% {
+		right: 80.6%;
+		transform: rotate(180deg);
+	}
+	75% {
 		right: -7px;
+		transform: rotate(180deg);
 	}
 	100% {
 		right: 7px;
+		transform: rotate(180deg);
 	}
 }
 
@@ -152,16 +202,63 @@
 	0% {
 		width: 0%;
 	}
+	25% {
+		height: 100%;
+	}
+	50% {
+		width: 100%;
+		top: 0;
+	}
+	75% {
+		width: 100%;
+		top: 0;
+	}
 	100% {
 		width: 100%;
+		top: -101%;
 	}
 }
 
 @keyframes beforeOrangeBackwards {
 	0% {
 		width: 100%;
+		top: -101%;
+	}
+	25% {
+		width: 100%;
+		top: 0;
+	}
+	50% {
+		width: 100%;
+		top: 0;
+	}
+	75% {
+		height: 100%;
 	}
 	100% {
 		width: 0%;
+	}
+}
+
+@keyframes link {
+	0% {
+		height: 74px;
+	}
+	100% {
+		text-align: center;
+		height: 80%;
+	}
+}
+
+@keyframes linkBackward {
+	0% {
+		height: 80%;
+		text-align: center;
+	}
+	50% {
+		height: 80%;
+	}
+	100% {
+		height: 75px;
 	}
 }

@@ -12,7 +12,6 @@
 body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
-  background-color: #000;
 }
 
 li {
@@ -377,11 +376,15 @@ span {
   fill: #fff;
 }
 
+.categories__item:hover .categories__text {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .categories__link {
   position: absolute;
-  top: 256px;
-  right: 32px;
-  bottom: auto;
+  top: auto;
+  right: 50%;
+  bottom: 10%;
   left: auto;
   padding: 20px 40px;
   background-color: #ffbe00;
@@ -389,28 +392,37 @@ span {
   border-radius: 16px;
   transition: 0.3s;
   overflow: hidden;
+  transform: translateX(50%);
+}
+
+.categories__link.is-active {
+  animation: 0.6s link 1.2s forwards;
+}
+
+.categories__link.is-backward {
+  animation: 0.6s linkBackward 0s forwards;
 }
 
 .categories__link.is-active::before {
-  content: '';
+  content: "";
   position: absolute;
   right: 0;
   top: 0;
   width: 0;
   height: 100%;
   background-color: #ffbe00;
-  animation: 0.6s beforeOrange 0.6s forwards;
+  animation: 2s beforeOrange 0.3s forwards;
 }
 
 .categories__link.is-backward::before {
-  content: '';
+  content: "";
   position: absolute;
   right: 0;
   top: 0;
   width: 100%;
   height: 100%;
   background-color: #ffbe00;
-  animation: 0.6s beforeOrangeBackwards 0.3s forwards;
+  animation: 2s beforeOrangeBackwards 0s forwards;
 }
 
 .categories__type {
@@ -428,6 +440,7 @@ span {
   border-radius: 16px;
   transition: 0.3s;
   height: 100%;
+  max-height: 75px;
 }
 
 .categories__arrow svg {
@@ -451,7 +464,42 @@ span {
   right: 80%;
   bottom: auto;
   left: auto;
-  animation: 0.6s arrowBackward 0.4s forwards;
+  transform: rotate(270deg);
+  animation: 1s arrowBackward 0s forwards;
+}
+
+.categories__text {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 20px 0 0px;
+  color: #222222;
+  transition: 0.3s;
+}
+
+.categories__look {
+  position: absolute;
+  top: 67%;
+  right: 50%;
+  bottom: auto;
+  left: auto;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #fff;
+  color: #222222;
+  padding: 10px 30px;
+  border-radius: 30px;
+  transform: translateX(50%);
+  transition: 0.3s;
+  border: 2px solid transparent;
+  text-transform: uppercase;
+}
+
+.categories__look:hover {
+  background-color: #222222;
+  color: #fff;
+  border: 2px solid #fff;
 }
 
 @keyframes arrow {
@@ -474,18 +522,31 @@ span {
   100% {
     right: 80.6%;
     transform: rotate(270deg);
+    background-color: transparent;
   }
 }
 
 @keyframes arrowBackward {
   0% {
-    right: 80%;
+    right: 80.6%;
+    transform: rotate(270deg);
+    background-color: transparent;
+  }
+  25% {
+    right: 80.6%;
+    transform: rotate(270deg);
   }
   50% {
+    right: 80.6%;
+    transform: rotate(180deg);
+  }
+  75% {
     right: -7px;
+    transform: rotate(180deg);
   }
   100% {
     right: 7px;
+    transform: rotate(180deg);
   }
 }
 
@@ -493,17 +554,64 @@ span {
   0% {
     width: 0%;
   }
+  25% {
+    height: 100%;
+  }
+  50% {
+    width: 100%;
+    top: 0;
+  }
+  75% {
+    width: 100%;
+    top: 0;
+  }
   100% {
     width: 100%;
+    top: -101%;
   }
 }
 
 @keyframes beforeOrangeBackwards {
   0% {
     width: 100%;
+    top: -101%;
+  }
+  25% {
+    width: 100%;
+    top: 0;
+  }
+  50% {
+    width: 100%;
+    top: 0;
+  }
+  75% {
+    height: 100%;
   }
   100% {
     width: 0%;
+  }
+}
+
+@keyframes link {
+  0% {
+    height: 74px;
+  }
+  100% {
+    text-align: center;
+    height: 80%;
+  }
+}
+
+@keyframes linkBackward {
+  0% {
+    height: 80%;
+    text-align: center;
+  }
+  50% {
+    height: 80%;
+  }
+  100% {
+    height: 75px;
   }
 }
 /*# sourceMappingURL=index.css.map */

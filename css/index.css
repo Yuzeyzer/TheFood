@@ -299,7 +299,6 @@ span {
 
 .categories {
   position: relative;
-  height: 100vh;
 }
 
 .categories::before {
@@ -477,7 +476,7 @@ span {
   transition: 0.3s;
 }
 
-.categories__look {
+.categories__checkout {
   position: absolute;
   top: 67%;
   right: 50%;
@@ -494,12 +493,22 @@ span {
   transition: 0.3s;
   border: 2px solid transparent;
   text-transform: uppercase;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3;
+  transition-delay: 0.01s;
 }
 
-.categories__look:hover {
+.categories__checkout:hover {
   background-color: #222222;
   color: #fff;
   border: 2px solid #fff;
+}
+
+.categories__checkout.is-active {
+  transition-delay: 2s;
+  opacity: 1;
+  visibility: visible;
 }
 
 @keyframes arrow {
@@ -613,5 +622,13 @@ span {
   100% {
     height: 75px;
   }
+}
+
+.services {
+  padding-top: 115px;
+}
+
+.services__title {
+  padding-bottom: 50px;
 }
 /*# sourceMappingURL=index.css.map */

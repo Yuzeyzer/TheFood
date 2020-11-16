@@ -1,6 +1,6 @@
 .categories {
 	position: relative;
-	height: 100vh;
+	
 	&::before {
 		content: "";
 		@include position(absolute, 400px, 0);
@@ -131,7 +131,7 @@
 		color: $color-black;
 		transition: 0.3s;
 	}
-	&__look {
+	&__checkout {
 		@include position(absolute, 67%, 50%);
 		@include font($font-poppins, 18px, 700);
 		background-color: $color-white;
@@ -142,10 +142,19 @@
 		transition: 0.3s;
 		border: 2px solid transparent;
 		text-transform: uppercase;
+		opacity: 0;
+		visibility: hidden;
+		transition: 0.3;
+		transition-delay: 0.01s;
 		&:hover {
 			background-color: $color-black;
 			color: $color-white;
 			border: 2px solid $color-white;
+		}
+		&.is-active {
+			transition-delay: 2s;
+			opacity: 1;
+			visibility: visible;
 		}
 	}
 }

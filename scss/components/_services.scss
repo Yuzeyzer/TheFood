@@ -1,7 +1,42 @@
 .services {
 	padding-top: 115px;
-
+	text-align: center;
+	&__row {
+		margin: -18px;
+	}
+	&__item {
+		transition: 0.3s;
+		cursor: pointer;
+		margin: 18px;
+		text-align: center;
+		background-color: white;
+		border-radius: 30px;
+		padding: 50px 34px;
+	}
+	img {
+		padding: 10px 10px;
+		border: 2px solid $color-darkGray;
+		border-radius: 20px;
+		width: 130px;
+		height: 95px;
+	}
 	&__title {
-		padding-bottom: 50px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 30px;
+	}
+	&__description {
+		font-size: 16px;
+		color: $color-darkGray;
+	}
+	&__item:hover {
+		background-color: $color-orange;
+		color: white;
+		p {
+			color: white;
+		}
+		img {
+		border-color: white;
+		}
 	}
 }

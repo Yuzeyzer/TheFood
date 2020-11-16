@@ -106,6 +106,23 @@ span {
   background-color: black;
 }
 
+.section__header {
+  max-width: 892px;
+  margin: 0 auto;
+}
+
+.section__title {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 35px;
+}
+
+.section__description {
+  padding-bottom: 90px;
+  font-size: 16px;
+  color: #9e9e9e;
+}
+
 /* @font-face kit by Fonts2u (https://fonts2u.com) */
 @font-face {
   font-family: 'Fresh Cream';
@@ -626,9 +643,52 @@ span {
 
 .services {
   padding-top: 115px;
+  text-align: center;
+}
+
+.services__row {
+  margin: -18px;
+}
+
+.services__item {
+  transition: 0.3s;
+  cursor: pointer;
+  margin: 18px;
+  text-align: center;
+  background-color: white;
+  border-radius: 30px;
+  padding: 50px 34px;
+}
+
+.services img {
+  padding: 10px 10px;
+  border: 2px solid #9e9e9e;
+  border-radius: 20px;
+  width: 130px;
+  height: 95px;
 }
 
 .services__title {
-  padding-bottom: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 30px;
+}
+
+.services__description {
+  font-size: 16px;
+  color: #9e9e9e;
+}
+
+.services__item:hover {
+  background-color: #ffbe00;
+  color: white;
+}
+
+.services__item:hover p {
+  color: white;
+}
+
+.services__item:hover img {
+  border-color: white;
 }
 /*# sourceMappingURL=index.css.map */

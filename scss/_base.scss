@@ -107,16 +107,18 @@ span {
   &__header {
     max-width: 892px;
     margin: 0 auto;
+    text-align: center;
   }
-	&__title {
+  &__title {
     padding-top: 20px;
     padding-bottom: 20px;
     font-size: 35px;
-
-	}
-	&__description {
+    @include font($font-cream, 36px);
+		color: $color-black;
+  }
+  &__description {
     padding-bottom: 90px;
     font-size: 16px;
     color: $color-darkGray;
-	}
+  }
 }

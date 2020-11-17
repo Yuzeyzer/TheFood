@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+/* @font-face kit by Fonts2u (https://fonts2u.com) */
+@font-face {
+  font-family: 'Fresh Cream';
+  src: url("../fonts/Fresh_Cream.eot?") format("eot"), url("../fonts/Fresh_Cream.woff") format("woff"), url("../fonts/Fresh_Cream.ttf") format("truetype"), url("../fonts/Fresh_Cream.svg#FreshCream") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -109,26 +117,23 @@ span {
 .section__header {
   max-width: 892px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .section__title {
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 35px;
+  font-family: "Fresh Cream";
+  font-size: 36px;
+  font-weight: 400;
+  color: #222222;
 }
 
 .section__description {
   padding-bottom: 90px;
   font-size: 16px;
   color: #9e9e9e;
-}
-
-/* @font-face kit by Fonts2u (https://fonts2u.com) */
-@font-face {
-  font-family: 'Fresh Cream';
-  src: url("../fonts/Fresh_Cream.eot?") format("eot"), url("../fonts/Fresh_Cream.woff") format("woff"), url("../fonts/Fresh_Cream.ttf") format("truetype"), url("../fonts/Fresh_Cream.svg#FreshCream") format("svg");
-  font-weight: normal;
-  font-style: normal;
 }
 
 .col-4 {
@@ -658,6 +663,7 @@ span {
   background-color: white;
   border-radius: 30px;
   padding: 50px 34px;
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
 }
 
 .services img {
@@ -680,8 +686,10 @@ span {
 }
 
 .services__item:hover {
+  margin-top: -5px;
   background-color: #ffbe00;
   color: white;
+  box-shadow: 0 8px 14px 0 #ffbe00;
 }
 
 .services__item:hover p {
@@ -690,5 +698,25 @@ span {
 
 .services__item:hover img {
   border-color: white;
+}
+
+.sort {
+  padding-top: 240px;
+}
+
+.sort__filter {
+  justify-content: center;
+}
+
+.sort .filter__items {
+  margin-left: 65px;
+  font-family: "Poppins";
+  font-size: 16px;
+  font-weight: 500;
+  color: #707070;
+}
+
+.sort .filter__items:nth-child(1) {
+  margin: 0;
 }
 /*# sourceMappingURL=index.css.map */

@@ -1,0 +1,25 @@
+.sort {
+	padding-top: 240px;
+	&__filter {
+		justify-content: center;
+	}
+	.filter {
+		&__items {
+			@include font("Poppins", 16px, 500);
+			margin-left: 65px;
+			color: $color-spaceGray;
+			&:nth-child(1) {
+				margin: 0;
+			}
+			&--active {
+				position: relative;
+				&::before {
+					content: '';
+					position: absolute;
+					bottom: -10px;
+					left: 0;
+				}
+			}
+		}
+	}
+}

@@ -1,5 +1,6 @@
 .sort {
 	padding-top: 240px;
+	padding-bottom: 240px;
 	&__filter {
 		justify-content: center;
 	}
@@ -8,18 +9,64 @@
 			@include font("Poppins", 16px, 500);
 			margin-left: 65px;
 			color: $color-spaceGray;
+			cursor: pointer;
 			&:nth-child(1) {
 				margin: 0;
 			}
 			&--active {
 				position: relative;
+				color: $color-orange;
+				transition: 0.3s;
 				&::before {
-					content: '';
+					content: "";
 					position: absolute;
-					bottom: -10px;
-					left: 0;
+					bottom: -12px;
+					left: 50%;
+					transform: translateX(-50%);
+					width: 14px;
+					height: 12px;
+					background: url("../images/triangle.svg");
+					animation: triangle 0.3s forwards ease-in-out;
 				}
 			}
 		}
+	}
+
+	&__row {
+		padding-top: 105px;
+	}
+	&__info {
+		padding: 50px 15px 0;
+	}
+	&__picture {
+		width: 100%;
+	}
+	&__title {
+		@include font("Poppins", 24px, 500);
+		color: $color-black;
+	}
+	&__price {
+		@include font("Poppins", 30px, 500);
+		color: $color-orange;
+	}
+	&__description {
+		@include font("Poppins", 16px, 500);
+		margin: 15px 0 10px;
+		color: $color-spaceGray;
+	}
+}
+
+@keyframes triangle {
+	0% {
+		bottom: -22px;
+		opacity: 0;
+	}
+	50% {
+		bottom: -8px;
+		opacity: 0.5;
+	}
+	100% {
+		bottom: -12px;
+		opacity: 1;
 	}
 }

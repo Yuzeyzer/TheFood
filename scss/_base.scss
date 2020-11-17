@@ -40,6 +40,14 @@ span {
   flex-wrap: wrap;
 }
 
+.space-between {
+  justify-content: space-between;
+}
+
+.align-items {
+  align-items: center;
+}
+
 .btn {
   font-weight: 600;
   font-size: 16px;
@@ -114,7 +122,7 @@ span {
     padding-bottom: 20px;
     font-size: 35px;
     @include font($font-cream, 36px);
-		color: $color-black;
+    color: $color-black;
   }
   &__description {
     padding-bottom: 90px;

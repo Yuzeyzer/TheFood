@@ -30,16 +30,34 @@
 				}
 			}
 		}
+		&__element {
+			animation: sultan 1s;
+			@keyframes sultan {
+				from {
+					transform: scale(0)
+				}
+				to {
+					transform: scale(1)
+				}
+			}
+		}
 	}
 
 	&__row {
-		padding-top: 105px;
+		padding-top: 60px;
+		margin: -25px;
+	}
+	&__item {
+		padding: 45px 25px;
 	}
 	&__info {
 		padding: 50px 15px 0;
 	}
 	&__picture {
 		width: 100%;
+		box-shadow: 0 9px 18px 0 rgba(0, 0, 0, 0.2);
+		border-radius: 28px;
+		height: 425px;
 	}
 	&__title {
 		@include font("Poppins", 24px, 500);
@@ -53,6 +71,44 @@
 		@include font("Poppins", 16px, 500);
 		margin: 15px 0 10px;
 		color: $color-spaceGray;
+	}
+	&__add {
+		position: relative;
+		padding: 25px 32px;
+		border: none;
+		outline: none;
+		background-color: $color-orange;
+		border-radius: 10px;
+		cursor: pointer;
+		transition: 0.3s;
+		border: 2px solid transparent;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			height: 28px;
+			width: 3px;
+			background-color: $color-white;
+			border-radius: 2px;
+			transition: 0.3s;
+		}
+		&::before {
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+		&::after {
+			height: 32px;
+			transform: translate(-50%, -50%) rotate(90deg);
+		}
+		&:hover {
+			background-color: $color-white;
+			border: 2px solid $color-orange;
+			&::before,
+			&::after {
+				background-color: $color-orange;
+			}
+		}
 	}
 }
 

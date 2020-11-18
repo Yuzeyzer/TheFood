@@ -752,8 +752,26 @@ span {
   animation: triangle 0.3s forwards ease-in-out;
 }
 
+.sort .filter__element {
+  animation: sultan 1s;
+}
+
+@keyframes sultan {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
 .sort__row {
-  padding-top: 105px;
+  padding-top: 60px;
+  margin: -25px;
+}
+
+.sort__item {
+  padding: 45px 25px;
 }
 
 .sort__info {
@@ -762,6 +780,9 @@ span {
 
 .sort__picture {
   width: 100%;
+  box-shadow: 0 9px 18px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 28px;
+  height: 425px;
 }
 
 .sort__title {
@@ -784,6 +805,48 @@ span {
   font-weight: 500;
   margin: 15px 0 10px;
   color: #707070;
+}
+
+.sort__add {
+  position: relative;
+  padding: 25px 32px;
+  border: none;
+  outline: none;
+  background-color: #ffbe00;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+
+.sort__add::before, .sort__add::after {
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.sort__add::before {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sort__add::after {
+  height: 32px;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.sort__add:hover {
+  background-color: #fff;
+  border: 2px solid #ffbe00;
+}
+
+.sort__add:hover::before, .sort__add:hover::after {
+  background-color: #ffbe00;
 }
 
 @keyframes triangle {

@@ -70,3 +70,46 @@ function sortFilter(index) {
   //   console.log(clonnedCol3);
   // }
 }
+
+function cart() {
+  const addButtons = document.querySelectorAll('.sort__add');
+  const cartCounter = document.querySelector('.cart__counter');
+  let counter = 0;
+  addButtons.forEach((button) => {
+    button.addEventListener('click', function () {
+      counter += 1;
+      cartCounter.innerHTML = `${counter}`;
+    });
+  });
+}
+cart();
+
+function checkmarkRemover() {
+  const toggle = document.querySelectorAll('.sort__add');
+  toggle.forEach((item) => {
+    item.classList.remove('sort__add--active');
+    const circles = document.querySelectorAll('.circle-loader');
+    circles.forEach((circ) => {
+      circ.classList.remove('load-complete');
+    });
+    const checkMarks = document.querySelectorAll('.checkmark');
+    checkMarks.forEach((check) => {
+      check.classList.remove('checkmark--active');
+    });
+  });
+}
+
+function checkmark() {
+  const toggle = document.querySelectorAll('.sort__add');
+  const circles = document.querySelectorAll('.circle-loader');
+  const checkMarks = document.querySelectorAll('.checkmark');
+  toggle.forEach((item, index) => {
+    item.addEventListener('click', function (samaKnopka) {
+      samaKnopka.target.classList.add('sort__add--active');
+      circles[index].classList.add('load-complete');
+      checkMarks[index].classList.add('checkmark--active');
+      setTimeout(checkmarkRemover, 1000);
+    });
+  });
+}
+checkmark();

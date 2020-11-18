@@ -1,6 +1,7 @@
 .sort {
 	padding-top: 240px;
 	padding-bottom: 240px;
+
 	&__filter {
 		justify-content: center;
 	}
@@ -34,10 +35,10 @@
 			animation: sultan 1s;
 			@keyframes sultan {
 				from {
-					transform: scale(0)
+					transform: scale(0);
 				}
 				to {
-					transform: scale(1)
+					transform: scale(1);
 				}
 			}
 		}
@@ -82,6 +83,7 @@
 		cursor: pointer;
 		transition: 0.3s;
 		border: 2px solid transparent;
+		opacity: 1;
 		&::before,
 		&::after {
 			content: "";
@@ -91,6 +93,7 @@
 			background-color: $color-white;
 			border-radius: 2px;
 			transition: 0.3s;
+			cursor: pointer;
 		}
 		&::before {
 			left: 50%;
@@ -108,6 +111,122 @@
 			&::after {
 				background-color: $color-orange;
 			}
+		}
+		&:active {
+			transform: translateY(-10px);
+		}
+		&--active {
+			background-color: transparent !important;
+			border: 2px solid transparent !important;
+			&::before,
+			&::after {
+				opacity: 0;
+			}
+		}
+	}
+	$brand-success: #5cb85c;
+	$loader-size: 4em;
+	$check-height: $loader-size/2;
+	$check-width: $check-height/2;
+	$check-left: ($loader-size/6 + $loader-size/12);
+	$check-thickness: 3px;
+	$check-color: $brand-success;
+
+	.circle-loader {
+		display: none;
+		position: absolute;
+		left: 50%;
+		top: 0;
+		margin-bottom: $loader-size/2;
+		border: 2px solid rgba(0, 0, 0, 0.2);
+		border-left-color: $check-color;
+		vertical-align: top;
+		border-radius: 50%;
+		width: $loader-size;
+		height: $loader-size;
+		transform: translateX(-50%);
+		cursor: pointer;
+	}
+
+	.load-complete {
+		display: inline-block;
+		animation: loader-spin 1.2s linear;
+		border-color: $check-color;
+		transition: border 500ms ease-out;
+		cursor: pointer;
+	}
+
+	.checkmark {
+		display: none;
+		cursor: pointer;
+		&--active {
+			display: block;
+			opacity: 0;
+			animation: 0.3s eraly 0s linear forwards;
+			@keyframes eraly {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+		}
+
+		&.draw:after {
+			animation-duration: 800ms;
+			animation-timing-function: ease;
+			animation-name: checkmark;
+			top: 73%;
+			left: 42%;
+			transform: scaleX(-1) rotate(135deg) translateX(-100%);
+		}
+
+		&:after {
+			opacity: 1;
+			height: $check-height;
+			width: $check-width;
+			transform-origin: left top;
+			border-right: $check-thickness solid $check-color;
+			border-top: $check-thickness solid $check-color;
+			content: "";
+			left: $check-left;
+			top: $check-height;
+			position: absolute;
+		}
+	}
+
+	@keyframes loader-spin {
+		0% {
+			transform: rotate(0deg);
+			transform: translateX(-50%);
+		}
+		100% {
+			transform: rotate(360deg);
+			transform: translateX(-50%);
+		}
+	}
+
+	@keyframes checkmark {
+		0% {
+			height: 0;
+			width: 0;
+			opacity: 1;
+		}
+		20% {
+			height: 0;
+			width: $check-width;
+			opacity: 1;
+		}
+		40% {
+			height: $check-height;
+			width: $check-width;
+			opacity: 1;
+		}
+		100% {
+			height: $check-height;
+			width: $check-width;
+			opacity: 1;
 		}
 	}
 }

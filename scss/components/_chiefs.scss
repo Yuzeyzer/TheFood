@@ -1,0 +1,56 @@
+.chiefs {
+	padding-bottom: 195px;
+	&__title {
+		color: $color-white;
+	}
+	.col-3 {
+		padding: 0 22px;
+	}
+	&__item {
+		position: relative;
+		overflow: hidden;
+		z-index: 1;
+		box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.3);
+		border-radius: 26px;
+		background-color: transparent;
+		img {
+			height: 482px;
+			width: 100%;
+		}
+		&:hover {
+			.chiefs {
+				&__name {
+					color: $color-white;
+				}
+				&__speciality {
+					color: $color-gray;
+				}
+				&__info {
+					background-color: $color-orange;
+				}
+			}
+		}
+	}
+	&__info {
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		z-index: 0;
+		transform: translateX(-50%);
+		padding: 24px 0 20px;
+		width: 100%;
+		text-align: center;
+		border-radius: 26px;
+		max-width: 370px;
+		background-color: rgba(223, 182, 94, 0.7);
+		transition: 0.3s;
+	}
+	&__name {
+		@include font($font-poppins, 30px, 500);
+		transition: 0.3s;
+	}
+	&__speciality {
+		@include font($font-poppins, 24px, 400);
+		transition: 0.3s;
+	}
+}

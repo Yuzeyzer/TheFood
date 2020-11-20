@@ -1,0 +1,62 @@
+.footer {
+	&__top {
+		padding: 80px 0;
+	}
+	&__bottom {
+		padding: 40px 0;
+		background-color: $color-black;
+	}
+	&__title {
+		@include font($font-poppins, 20px, 500);
+		margin-bottom: 10px;
+		color: $color-black;
+	}
+	&__description {
+		@include font($font-poppins, 16px, 400);
+		margin-top: 30px;
+		color: $color-spaceGray;
+		max-width: 400px;
+	}
+	&__list li {
+		margin-top: 10px;
+	}
+	&__list a {
+		@include font($font-poppins, 16px, 500);
+		line-height: 157%;
+		color: $color-black;
+	}
+	&__form {
+		padding-top: 90px;
+	}
+	&__email {
+		@include font($font-poppins, 16px, 400);
+		padding: 14px 24px;
+		border: none;
+		outline: none;
+		border-radius: 12px;
+		&::-webkit-input-placeholder {
+			@include font($font-poppins, 16px, 400);
+			color: $color-spaceGray;
+		}
+		&::-moz-placeholder {
+			@include font($font-poppins, 16px, 400);
+			color: $color-spaceGray;
+		}
+		&:-ms-input-placeholder {
+			@include font($font-poppins, 16px, 400);
+			color: $color-spaceGray;
+		}
+		&::-ms-input-placeholder {
+			@include font($font-poppins, 16px, 400);
+			color: $color-spaceGray;
+		}
+		&::placeholder {
+			@include font($font-poppins, 16px, 400);
+			color: $color-spaceGray;
+		}
+	}
+	&__copyright {
+		@include font($font-poppins, 16px, 400);
+		color: $color-white;
+	}
+}

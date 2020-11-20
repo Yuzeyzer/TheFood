@@ -68,8 +68,22 @@ span {
   }
 }
 
+.btn-black {
+  background-color: $color-black;
+  color: $color-white;
+  transition: 0.3s;
+  &:hover {
+    background-color: $color-orange;
+    color: $color-black;
+  }
+}
+
 .text-right {
   text-align: right;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .relative {

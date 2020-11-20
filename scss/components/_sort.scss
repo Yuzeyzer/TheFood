@@ -27,12 +27,22 @@
 					width: 14px;
 					height: 12px;
 					background: url("../images/triangle.svg");
-					animation: triangle 0.3s forwards ease-in-out;
+					-webkit-animation: triangle 0.3s forwards ease-in-out;
+					        animation: triangle 0.3s forwards ease-in-out;
 				}
 			}
 		}
 		&__element {
-			animation: sultan 1s;
+			-webkit-animation: sultan 1s;
+			        animation: sultan 1s;
+			@-webkit-keyframes sultan {
+				from {
+					transform: scale(0);
+				}
+				to {
+					transform: scale(1);
+				}
+			}
 			@keyframes sultan {
 				from {
 					transform: scale(0);
@@ -112,9 +122,6 @@
 				background-color: $color-orange;
 			}
 		}
-		&:active {
-			transform: translateY(-10px);
-		}
 		&--active {
 			background-color: transparent !important;
 			border: 2px solid transparent !important;
@@ -150,7 +157,8 @@
 
 	.load-complete {
 		display: inline-block;
-		animation: loader-spin 1.2s linear;
+		-webkit-animation: loader-spin 1.2s linear;
+		        animation: loader-spin 1.2s linear;
 		border-color: $check-color;
 		transition: border 500ms ease-out;
 		cursor: pointer;
@@ -162,7 +170,16 @@
 		&--active {
 			display: block;
 			opacity: 0;
-			animation: 0.3s eraly 0s linear forwards;
+			-webkit-animation: 0.3s eraly 0s linear forwards;
+			        animation: 0.3s eraly 0s linear forwards;
+			@-webkit-keyframes eraly {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
 			@keyframes eraly {
 				from {
 					opacity: 0;
@@ -174,9 +191,12 @@
 		}
 
 		&.draw:after {
-			animation-duration: 800ms;
-			animation-timing-function: ease;
-			animation-name: checkmark;
+			-webkit-animation-duration: 800ms;
+			        animation-duration: 800ms;
+			-webkit-animation-timing-function: ease;
+			        animation-timing-function: ease;
+			-webkit-animation-name: checkmark;
+			        animation-name: checkmark;
 			top: 73%;
 			left: 42%;
 			transform: scaleX(-1) rotate(135deg) translateX(-100%);
@@ -196,6 +216,17 @@
 		}
 	}
 
+	@-webkit-keyframes loader-spin {
+		0% {
+			transform: rotate(0deg);
+			transform: translateX(-50%);
+		}
+		100% {
+			transform: rotate(360deg);
+			transform: translateX(-50%);
+		}
+	}
+
 	@keyframes loader-spin {
 		0% {
 			transform: rotate(0deg);
@@ -204,6 +235,29 @@
 		100% {
 			transform: rotate(360deg);
 			transform: translateX(-50%);
+		}
+	}
+
+	@-webkit-keyframes checkmark {
+		0% {
+			height: 0;
+			width: 0;
+			opacity: 1;
+		}
+		20% {
+			height: 0;
+			width: $check-width;
+			opacity: 1;
+		}
+		40% {
+			height: $check-height;
+			width: $check-width;
+			opacity: 1;
+		}
+		100% {
+			height: $check-height;
+			width: $check-width;
+			opacity: 1;
 		}
 	}
 
@@ -228,6 +282,21 @@
 			width: $check-width;
 			opacity: 1;
 		}
+	}
+}
+
+@-webkit-keyframes triangle {
+	0% {
+		bottom: -22px;
+		opacity: 0;
+	}
+	50% {
+		bottom: -8px;
+		opacity: 0.5;
+	}
+	100% {
+		bottom: -12px;
+		opacity: 1;
 	}
 }
 

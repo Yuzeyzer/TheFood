@@ -105,36 +105,29 @@ span {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   width: 100vw;
   height: 100vh;
 }
 
-.over-1 {
+.over-1, .over-2, .over-3 {
   position: absolute;
   top: 0;
-  left: 0;
   width: 33.33%;
   height: 100%;
   background-color: black;
+}
+
+.over-1 {
+  left: 0;
 }
 
 .over-2 {
-  position: absolute;
-  top: 0;
   left: 33.33%;
-  width: 33.33%;
-  height: 100%;
-  background-color: black;
 }
 
 .over-3 {
-  position: absolute;
-  top: 0;
   left: 66.66%;
-  width: 33.33%;
-  height: 100%;
-  background-color: black;
 }
 
 .section__header {
@@ -192,7 +185,7 @@ span {
   position: fixed;
   width: 100%;
   background-color: #fff;
-  z-index: 2;
+  z-index: 3;
 }
 
 .header__row {

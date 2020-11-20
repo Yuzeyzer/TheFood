@@ -147,6 +147,6 @@ TweenMax.to('.over-3', 1, {
 });
 
 TweenMax.to('.overlay', 1, {
-  delay: 1.1,
+  delay: 2.1,
   zIndex: -1,
 });
